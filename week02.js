@@ -11,6 +11,12 @@ client.connect(err => {
   }
   console.log("Connected to mongodb");
 
+  let result = client.db( 'Database').collection( 'abc').insertOne({
+    name: 'Carlos Barton',
+    city: '赖海市',
+    avatar: 'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1205.jpg',
+    pass: '$2a$10$gwXp0i4T3f06zVJvhFFMWuQMMu8cYFBfU1rBL.6oMgKuv.IKYVl8q',
+  }) 
   //client.db().admin().listDatabases().then(result =>{
   //  console.log(result['databases'][6]);
   //})
@@ -19,8 +25,9 @@ client.connect(err => {
   //  console.log(result);
   //})
 
-  client.db('sample_mflix').collection('movies').find({'title': 'Blacksmith Scene'}).toArray().then(result=>{
-    console.log(result);
-  })
+  //client.db('sample_mflix').collection('movies').find({'title': 'Blacksmith Scene'}).toArray().then(result=>{
+   // console.log(result);
+  //})
+
 
 });
